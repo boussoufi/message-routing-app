@@ -1,0 +1,19 @@
+# Node
+node_modules
+npm-debug.log
+
+# Angular
+dist
+.angular
+
+# Spring Boot
+target/
+.mvn/
+
+# IDEs
+.idea/
+.vscode/
+*.iml
+
+# Divers
+.DS_Store

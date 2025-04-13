@@ -1,0 +1,55 @@
+version: '3.8'
+
+services:
+  app:
+    build: ./message-routing-app-backend
+    ports:
+      - "8081:8080"
+    depends_on:
+      - postgres
+      - ibmmq
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/messagerouting
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=root
+      - IBM_MQ_HOST=ibmmq
+      - IBM_MQ_PORT=1414
+      - IBM_MQ_QUEUE_MANAGER=QM1
+      - IBM_MQ_CHANNEL=DEV.APP.SVRCONN
+      - IBM_MQ_QUEUE=DEV.QUEUE.1
+      - IBM_MQ_USERNAME=app
+      - IBM_MQ_PASSWORD=password
+
+  frontend:
+    build: ./message-routing-ui
+    ports:
+      - "80:80"
+    depends_on:
+      - app
+
+  postgres:
+    image: postgres:13
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_DB=messagerouting
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  ibmmq:
+    image: ibmcom/mq:latest
+    ports:
+      - "1414:1414"
+      - "9443:9443"
+    environment:
+      - LICENSE=accept
+      - MQ_QMGR_NAME=QM1
+      - MQ_APP_PASSWORD=password
+      - MQ_ENABLE_METRICS=true
+      - MQ_DEV=true
+      - MQ_RESTART_WEB=true
+
+volumes:
+  postgres-data:
