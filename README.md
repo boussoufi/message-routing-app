@@ -89,17 +89,31 @@ L'application sera disponible aux adresses :
 Pour développer localement sans Docker :
 1. Backend (Spring Boot)
 
-        cd message-routing-app-backend
+        Ouvre IntelliJ IDEA
 
-        ./mvnw spring-boot:run
+        Ouvre le dossier message-routing-app-backend comme projet.
+
+        Si demandé, importe le projet Maven (via le fichier pom.xml).
+
+        Dans le panneau Maven (à droite) :
+
+        Va dans Lifecycle → clique sur clean puis install pour builder le projet.
+
+        Lance l’application :
+
+        Soit depuis la classe principale (@SpringBootApplication) → clic droit → Run
+
+        Soit en créant une configuration Spring Boot dans Run > Edit Configurations
 
 2. Frontend (Angular)
 
-         cd message-routing-ui
+       Ouvre un nouveau projet IntelliJ (ou un autre onglet/fenêtre) avec le dossier message-routing-ui
 
-         npm install
-
-         ng serve
+       Dans le terminal intégré IntelliJ :
+        
+       npm install
+       ng serve
+       (Assure-toi que Angular CLI est installé globalement : npm install -g @angular/cli si besoin)
 
 # Utilisation de l'application
 ## Consultation des messages
