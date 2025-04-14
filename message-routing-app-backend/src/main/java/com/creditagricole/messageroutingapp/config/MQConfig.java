@@ -78,14 +78,4 @@ public class MQConfig {
         configurer.configure(factory, cachingConnectionFactory);
         return factory;
     }
-
-   /* @Bean
-    public JmsListenerContainerFactory<?> jmsListenerContainerFactory(
-            @Qualifier("cachingConnectionFactory") ConnectionFactory connectionFactory) {
-        DefaultJmsListenerContainerFactory factory = new DefaultJmsListenerContainerFactory();
-        factory.setConnectionFactory(connectionFactory);
-        factory.setSessionTransacted(false);
-        factory.setSessionAcknowledgeMode(Session.AUTO_ACKNOWLEDGE);
-        return factory;
-    }*/
 }
