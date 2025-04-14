@@ -77,7 +77,12 @@ L'application suit une architecture en couches avec :
 
 L'application sera disponible aux adresses :
 * Frontend : http://localhost
+    - Note: Si vous ne voyez pas la page des messages s'afficher automatiquement, essayez de vider le cache de votre navigateur ou d'ouvrir l'application dans une fenêtre de navigation privée ou essayer dans un notre navigateur.
 * Backend API : http://localhost:8081/api
+    - Note: L'URL de base renvoie une page d'erreur 404 car il n'y a pas de mapping explicite pour cette route.
+         #### Endpoints disponibles:
+            * Liste des partenaires: http://localhost:8081/api/partners
+            * Liste des messages: http://localhost:8081/api/messages
 * IBM MQ Console : https://localhost:9443/ibmmq/console (admin/passw0rd)
 
 # Installation pour le développement
