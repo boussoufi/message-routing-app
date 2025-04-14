@@ -1,0 +1,29 @@
+.container {
+  padding: 20px;
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+
+    h1 {
+      margin: 0;
+    }
+  }
+
+  table {
+    width: 100%;
+  }
+
+  .loading-container {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 30%;
+  }
+}

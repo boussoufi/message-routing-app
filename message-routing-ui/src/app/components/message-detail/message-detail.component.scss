@@ -1,0 +1,27 @@
+.message-detail {
+  min-width: 500px;
+
+  .detail-row {
+    margin-bottom: 16px;
+    display: flex;
+
+    .label {
+      font-weight: bold;
+      min-width: 150px;
+    }
+
+    &.content {
+      flex-direction: column;
+
+      pre {
+        background-color: #f5f5f5;
+        padding: 10px;
+        border-radius: 4px;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        max-height: 200px;
+        overflow-y: auto;
+      }
+    }
+  }
+}
