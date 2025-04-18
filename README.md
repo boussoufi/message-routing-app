@@ -213,4 +213,4 @@ Cette application répond à toutes les exigences demandées dans le test techni
 * Menu de navigation entre les différentes sections
 * Docker pour le déploiement
 
-L'application est également conçue pour être robuste et performante, capable de gérer un volume important de messages grâce à l'architecture choisie et les optimisations mises en place.RéessayerClaude n'a pas accès à Internet. Les liens fournis peuvent ne pas être précis ou à jour.B
+L'application est également conçue pour être robuste et performante, capable de gérer un volume important de messages grâce à l'architecture choisie et les optimisations mises en place.
